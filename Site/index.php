@@ -21,7 +21,7 @@
     <div class="container-fluid">
         <div class="text-center">
             <h2 class="wlcm-heading">Welcome To FaceClone!</h2>
-            <h2><small class="text-secondary">A simple Facebook clone.</small></h2>
+            <h3><small class="text-secondary">A simple Facebook clone.</small></h3>
         </div>
 
 
@@ -30,12 +30,30 @@
         <!-- Two Forms for Signing in and Registration. -->
 
 
-        <div class="row">
+        <div class="row p-4">
             
             <!-- Coloumn for Sign in form -->
             <div class="col-lg-6">
 
-                
+                <h5>Login to start enjoying unlimited fun!</h5>
+
+
+                <form action="">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    
+                    <div class="input-group pt-3">
+                        <button class="btn login-btn">Login</button>
+                    </div>
+                    
+
+                </form>
 
             </div>
 
@@ -46,16 +64,43 @@
 
             <div class="col-lg-6">
 
+                <h5>Don't have an account yet? Register!</h5>
 
+
+
+                <form action="">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Location">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+
+                    <div class="input-group pt-3">
+                        <button class="btn btn-success">Login</button>
+                    </div>
+
+
+                </form>
+
+
+
+                
 
             </div>
 
             
-
+            
 
         </div>
 
-
+        <small class="float-right pr-4">FaceClone - Made by M.Umar</small>
     </div>
     
     
