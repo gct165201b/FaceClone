@@ -9,7 +9,7 @@ This is a simple application that simulates some features of actual facebook.
 - [x] Include [Bootstrap 4](http://www.getbootstrap.com) - The front-end framework
 - [x] Create a login form.
 - [x] Create a Registration Form 
-- [ ] Add Custom Styles if Needed
+- [x] Add Custom Styles if Needed
 
 
 ## Create Timeline Page
