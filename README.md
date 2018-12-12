@@ -14,10 +14,12 @@ This is a simple application that simulates some features of actual facebook.
 
 ## Create Timeline Page
 
-- [ ] Create a Page for Timeline.
-- [ ] Create Navigation Links.
-- [ ] Create a Row and divide it in 3 sections like 3,6,3 = 12
-- [ ] Create Containers from which user can see stuff like friend requests, friends etc.
+- [x] Create a Page for Timeline.
+- [x] Create Navigation Links.
+- [x] Create a Row and divide it in 3 sections like 3,6,3 = 12
+- [x] Create Containers from which user can see stuff like friend requests, friends etc.
+- [x] Create a form from which user can make post.
+- [ ] Create a Section for Posts.
 - [ ] Apply Custom styling if needed.
 
 

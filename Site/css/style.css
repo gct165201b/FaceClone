@@ -1,8 +1,21 @@
+.nounderline {
+  text-decoration: none !important
+}
+
+
 .navigation {
     background: #3B5999;
 }
 
-.wlcm-heading {
+.txt-light {
+	color: #fff;
+}
+
+.txt-light:hover {
+	color: #eee;
+}
+
+.mt-12vh {
     margin-top: 12vh;
 }
 
