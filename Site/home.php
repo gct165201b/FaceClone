@@ -76,7 +76,33 @@
 
 
 
-			
+
+
+			<div class="card text-center">
+				<div class="card-body">
+
+					<p class="card-text text-left">With supporting text below as a natural lead-in to additional content.</p>
+
+				</div>
+				<div class="card-footer">
+					<p class="float-left">posted at 2017-05-27 20:45:01 by nicholaskajoh</p>
+
+					<a href="" class="float-right text-danger">[delete]</a>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 		</div>
