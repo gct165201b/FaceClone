@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-dark navigation">
-  <a class="navbar-brand" href="#">FaceClone</a>
+  <a class="navbar-brand" href="index.php">FaceClone</a>
 
 
   <!-- Nav Items will only be displayed if the user is logged in -->

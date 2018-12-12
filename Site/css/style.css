@@ -24,3 +24,10 @@
     background: #3479B4;
     color: #fff;
 }
+
+
+#profile-img {
+	background: #eee;
+	width: 130px;
+	height: 130px;
+}
