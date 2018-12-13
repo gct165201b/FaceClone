@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="input-group pt-3">
-                        <button class="btn btn-success">Login</button>
+                        <button class="btn btn-success">Register</button>
                     </div>
 
 
