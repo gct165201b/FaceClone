@@ -61,22 +61,22 @@
 
 
 
-                <form action="">
+                <form action="includes/processes/signup.inc.php" method="post">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input type="text" class="form-control" name="username" placeholder="Username">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Location">
+                        <input type="text" class="form-control" name="location" placeholder="Location">
                     </div>
 
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
 
                     <div class="input-group pt-3">
-                        <button class="btn btn-success">Register</button>
+                        <button type="submit" name="signup" class="btn btn-success">Register</button>
                     </div>
 
 
