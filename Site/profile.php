@@ -1,36 +1,36 @@
 <?php require 'includes/func.inc.php';
-    pageHeader("My Profile");
+    get_header("My Profile");
     include_once 'includes/navbar.inc.php';
 ?>
 
 
 
 
-	
+
 <div class="container-fluid">
-	
 
 
-	
+
+
 	<div class="row mt-12vh p-3">
-		
+
 
 
 		<!-- Divide the row into 3 coloumns like 3,6,3 = 12 -->
 
 		<div class="col-lg-3">
-			
+
 			<div class="card p-3">
-				
+
 				<h5>Edit profile</h5>
 
 
 				<form action="">
-					
+
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Status">
 					</div>
-					
+
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Location">
 					</div>
@@ -49,7 +49,7 @@
 
 
 		<div class="col-lg-6">
-			
+
 
 
 
@@ -79,13 +79,13 @@
 					<a href="" class="float-right text-danger">[delete]</a>
 				</div>
 			</div>
-			
+
 		</div>
 
 
 		<div class="col-lg-3">
-			
-			
+
+
 			<?php include_once 'includes/myfriends.inc.php'; ?>
 
 
@@ -103,7 +103,7 @@
 
 
 
-<?php 
+<?php
 
 	include_once 'includes/footer.inc.php';
 

@@ -1,6 +1,6 @@
 <?php
     require 'includes/func.inc.php';
-    pageHeader("Home");
+    get_header("Home");
     include_once 'includes/navbar.inc.php';
 ?>
 
@@ -13,15 +13,15 @@
 
 
 <div class="container-fluid">
-	
+
 
 	<div class="row mt-12vh p-3">
-		
+
 
 		<!-- Divide the row into 3 coloumns like 3,6,3 -->
-		
+
 		<div class="col-lg-3">
-			
+
 			<div class="card p-3">
 				<p class="font-weight-bold">nicholaskajoh</p>
 				<small>I love to code!</small>
@@ -34,7 +34,7 @@
 					<ul>
 						<li>
 							<!-- Link to profile of the person. -->
-							<a href="">johndoe</a> 
+							<a href="">johndoe</a>
 							<!-- Link to accept the friend request. -->
 							<a href="" class="text-success">[accept]</a>
 							<!-- Link to Reject the request -->
@@ -49,10 +49,10 @@
 
 
 		<div class="col-lg-6">
-			
+
 
 			<form action="">
-				
+
 				<div class="input-group">
 				  <input type="text" class="form-control" placeholder="Make a post">
 				  <div class="input-group-append">
@@ -116,10 +116,10 @@
 					<ul>
 						<li>
 							<!-- Link to profile of the person. -->
-							<a href="">Alberte</a> 
+							<a href="">Alberte</a>
 							<!-- Link to send friend request. -->
 							<a href="">[add]</a>
-							
+
 						</li>
 					</ul>
 				</small>

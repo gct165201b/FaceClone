@@ -1,9 +1,9 @@
 <?php
     require 'includes/func.inc.php';
-    pageHeader("Login");
+    get_header("Login");
 ?>
 
-    
+
 
     <!-- Navigation -->
     <?php
@@ -18,13 +18,13 @@
         </div>
 
 
-        
+
 
         <!-- Two Forms for Signing in and Registration. -->
 
 
         <div class="row p-4">
-            
+
             <!-- Coloumn for Sign in form -->
             <div class="col-lg-6">
 
@@ -40,11 +40,11 @@
                     <div class="input-group">
                         <input type="password" class="form-control" placeholder="Password">
                     </div>
-                    
+
                     <div class="input-group pt-3">
                         <button class="btn login-btn">Login</button>
                     </div>
-                    
+
 
                 </form>
 
@@ -84,23 +84,21 @@
 
 
 
-                
+
 
             </div>
 
-            
-            
+
+
 
         </div>
 
         <small class="float-right pr-4">FaceClone - Made by M.Umar</small>
     </div>
-    
-    
+
+
 
 
     <?php
         include_once 'includes/footer.inc.php';
     ?>
-
-    
