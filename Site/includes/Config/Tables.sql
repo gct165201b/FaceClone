@@ -46,3 +46,12 @@ CREATE TABLE friendship(
     FOREIGN KEY (u_id) REFERENCES users(u_id),
     FOREIGN KEY (f_id) REFERENCES users(u_id)
 );
+
+
+-- 5,13
+
+INSERT INTO posts
+    SET
+        p_date = now(),
+        p_author = 5,
+        p_content = 'Hello'

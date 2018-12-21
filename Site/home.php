@@ -75,17 +75,18 @@ if(!isset($_SESSION['u_id'])) {
 			<!-- Hr -->
 
 
-			<hr>
+			<!-- <hr> -->
 
 
 
 			<!-- Post Section -->
 
 
+            <?php display_posts(); ?>
 
 
 
-			<div class="card text-center">
+			<!-- <div class="card text-center">
 				<div class="card-body">
 
 					<p class="card-text text-left">Hello people!This is my first FaceClone post.Hurray!!!</p>
@@ -94,9 +95,12 @@ if(!isset($_SESSION['u_id'])) {
 				<div class="card-footer">
 					<p class="float-left">posted at 2017-05-27 20:45:01 by nicholaskajoh</p>
 
-					<a href="" class="float-right text-danger">[delete]</a>
+
+                    <form action="" method="post">
+                        <button class="btn btn-sm btn-outline-danger" type="submit" name="delete_post" value="p_id">Delete</button>
+                    </form>
 				</div>
-			</div>
+			</div> -->
 
 
 

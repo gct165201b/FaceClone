@@ -89,3 +89,38 @@ function login_status() {
         }
     }
 }
+
+
+function display_posts() {
+    // get all posts
+    require('./includes/Config/Database.php');
+    require('./includes/processes/operations.inc.php');
+
+    $database = new Database();
+
+    $connection = $database->connect();
+
+    $post_array = get_all_posts($connection);
+
+    if(count($post_array) === 0) {
+        echo "<h4>No Posts Available!</h4>";
+    } else {
+        foreach ($post_array as $post) {
+            // code...
+            echo "<hr>";
+            echo "<div class='card text-center'>";
+                echo "<div class='card-body'>";
+                    echo "<p class='card-text text-left'>". $post->get_post_content() ."</p>";
+                echo "</div>";
+
+                echo "<div class='card-footer'>";
+                    echo "<p class='float-left'>posted on ". $post->get_post_date() ." by ". $post->get_post_author() ."</p>";
+
+                    echo "<form action='' method='post'>";
+                        echo "<button type='submit' class='btn btn-sm btn-outline-danger' name='delete_post' value='". $post->get_post_id() ."'>Delete</button>";
+                    echo "</form>";
+                echo "</div>";
+            echo "</div>";
+        }
+    }
+}

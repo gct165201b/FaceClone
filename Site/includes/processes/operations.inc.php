@@ -95,3 +95,42 @@ function create_user_session($user) {
     $_SESSION['username'] = $user->get_username();
     $_SESSION['location'] = $user->get_location();
 }
+
+
+function get_all_posts($connection) {
+    require('./includes/Classes/Post.php');
+
+    $all_posts = array();
+
+    $query = "SELECT * FROM posts JOIN users ON posts.p_author = users.u_id";
+
+    $stmt = $connection->prepare($query);
+
+    $stmt->execute();
+
+    $total_records = $stmt->rowCount();
+
+    if($total_records === 0) {
+        return $all_posts;
+    } else {
+        $i = 0;
+
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $post_id = $row['p_id'];
+            $post_author = $row['username'];
+            $post_content = $row['p_content'];
+            $post_date = $row['p_date'];
+
+            $all_posts[$i] = new Post();
+            $all_posts[$i]->set_post_id($post_id);
+            $all_posts[$i]->set_post_author($post_author);
+            $all_posts[$i]->set_post_content($post_content);
+            $all_posts[$i]->set_post_date($post_date);
+
+            $i++;
+        }
+
+
+    }
+    return $all_posts;
+}
