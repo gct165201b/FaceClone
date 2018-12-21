@@ -11,16 +11,15 @@ function store_user($connection, $user) {
         $password = $user->get_password();
         $location = $user->get_location();
 
-
         // Hash the password
 
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         $query = "INSERT INTO users
             SET
-                username = '$username',
-                password = '$hashed_password',
-                location = '$location'";
+                username = " . $connection->quote($username) . ",
+                password = " . $connection->quote($hashed_password) . ",
+                location = " . $connection->quote($location) . "";
 
         $stmt = $connection->prepare($query);
 
@@ -35,12 +34,12 @@ function store_user($connection, $user) {
 }
 
 
-// Check if user with same username exists in DB
+// Check if user with same username exists in DB for signup
 function exists($connection, $user) {
     $username = $user->get_username();
     // Create Query
     $query = "SELECT * FROM users
-        WHERE username='$username'";
+        WHERE username=" . $connection->quote($username);
 
     $stmt = $connection->prepare($query);
 

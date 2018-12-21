@@ -57,6 +57,8 @@
 
             <div class="col-lg-6">
 
+                <?php signup_status(); ?>
+
                 <h5>Don't have an account yet? Register!</h5>
 
 
