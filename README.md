@@ -51,3 +51,15 @@ This is a simple application that simulates some features of actual facebook.
 - [x] Create operations.inc.php.
 - [x] Create a Function store_user($connection, $user).
 - [x] Create a Function exists($connection , $user) for validation.
+- [x] Create a Function signup_status() in func.inc.php to display an alert box.
+- [ ] Reset the signup form.
+
+## Login
+- [ ] Create login.inc.php.
+- [ ] Get values from fiedls.
+- [ ] Create a function for login in operations.inc.php.
+- [ ] Create Session if user is valid.
+- [ ] Redirect the user to home.php.
+- [ ] Create a Function login_status() in func.inc.php.
+- [ ] Display an error message to user using login_status() if user is not valid.
+- [ ] Reset the login form.
