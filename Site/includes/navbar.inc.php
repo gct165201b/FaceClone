@@ -10,7 +10,7 @@
 			<a class="nav-link active txt-light" href="home.php">Home</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link txt-light" href="profile.php">Profile</a>
+			<a class="nav-link txt-light" href="profile.php?profile=<?php echo $_SESSION['u_id']; ?>">Profile</a>
 		</li>
 
 

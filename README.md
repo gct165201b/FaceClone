@@ -69,3 +69,6 @@ This is a simple application that simulates some features of actual facebook.
 - [ ] Get data about a profile.
 - [ ] Hide the Status Edit form if user visits the profile of another user
 - [ ] Show all the friends of that person.
+
+## Home Page
+- [x] Created the Friend System.
