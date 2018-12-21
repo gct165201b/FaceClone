@@ -69,51 +69,9 @@ if(!isset($_SESSION['u_id'])) {
 
 			</form>
 
-
-
-
-			<!-- Hr -->
-
-
-			<!-- <hr> -->
-
-
-
 			<!-- Post Section -->
 
-
             <?php display_posts(); ?>
-
-
-
-			<!-- <div class="card text-center">
-				<div class="card-body">
-
-					<p class="card-text text-left">Hello people!This is my first FaceClone post.Hurray!!!</p>
-
-				</div>
-				<div class="card-footer">
-					<p class="float-left">posted at 2017-05-27 20:45:01 by nicholaskajoh</p>
-
-
-                    <form action="" method="post">
-                        <button class="btn btn-sm btn-outline-danger" type="submit" name="delete_post" value="p_id">Delete</button>
-                    </form>
-				</div>
-			</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 		</div>

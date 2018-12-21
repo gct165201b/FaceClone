@@ -97,12 +97,13 @@ function create_user_session($user) {
 }
 
 
-function get_all_posts($connection) {
+function get_all_posts($connection, $user_id) {
     require('./includes/Classes/Post.php');
 
     $all_posts = array();
 
-    $query = "SELECT * FROM posts JOIN users ON posts.p_author = users.u_id";
+    $query = "SELECT * FROM posts JOIN users ON posts.p_author = users.u_id WHERE p_id NOT IN";
+    $query .= "(SELECT p_id FROM post_user WHERE u_id=$user_id)";
 
     $stmt = $connection->prepare($query);
 
@@ -133,4 +134,35 @@ function get_all_posts($connection) {
 
     }
     return $all_posts;
+}
+
+
+// Delete a post permanently.
+function delete_post($connection, $post_user) {
+    $query = "DELETE FROM post_user WHERE p_id=" . $post_user['post_id'] .";";
+    $query .= "DELETE FROM posts WHERE p_id=" . $post_user['post_id'] . " AND p_author=" . $post_user['post_author_id'] .";";
+
+    $stmt = $connection->prepare($query);
+
+    if($stmt->execute()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function hide_post($connection, $post_user) {
+    $query = "INSERT INTO post_user
+        SET
+            p_id=" . $post_user['post_id'] . ",
+            u_id=" . $post_user['post_author_id'];
+
+    $stmt = $connection->prepare($query);
+
+    if($stmt->execute()) {
+        return true;
+    } else {
+        return false;
+    }
+
 }

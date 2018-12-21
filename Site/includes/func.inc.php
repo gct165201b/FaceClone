@@ -100,7 +100,9 @@ function display_posts() {
 
     $connection = $database->connect();
 
-    $post_array = get_all_posts($connection);
+    $post_array = get_all_posts($connection, $_SESSION['u_id']);
+
+    $connection = null;
 
     if(count($post_array) === 0) {
         echo "<h4>No Posts Available!</h4>";
@@ -116,8 +118,14 @@ function display_posts() {
                 echo "<div class='card-footer'>";
                     echo "<p class='float-left'>posted on ". $post->get_post_date() ." by ". $post->get_post_author() ."</p>";
 
-                    echo "<form action='' method='post'>";
-                        echo "<button type='submit' class='btn btn-sm btn-outline-danger' name='delete_post' value='". $post->get_post_id() ."'>Delete</button>";
+                    echo "<form action='./includes/processes/delete_post_user.php' method='post'>";
+                    $btn_name = null;
+                    if($post->get_post_author() === $_SESSION['username']) {
+                        $btn_name = "delete_post";
+                    } else {
+                        $btn_name = "hide_post";
+                    }
+                        echo "<button type='submit' class='btn btn-sm btn-outline-danger' name='" . $btn_name . "' value='". $post->get_post_id() ."'>Delete</button>";
                     echo "</form>";
                 echo "</div>";
             echo "</div>";
