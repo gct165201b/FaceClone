@@ -24,12 +24,24 @@ function get_header($title) {
 
 // Give the user a message that his account is created or not.
 function signup_status() {
-    if(isset($_GET['signup'])) {
+
+    if(isset($_GET['field'])) {
+        if($_GET['field'] === 'empty') {
+            echo "
+            <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+            <strong>Registration failed! </strong> Some Fields are Empty!
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+            </button>
+            </div>
+                 ";
+        }
+    } else if(isset($_GET['signup'])) {
         if($_GET['signup'] === 'failed' || $_GET['signup'] !== 'success') {
 
             echo "
             <div class='alert alert-warning alert-dismissible fade show' role='alert'>
-            <strong>Registration failed! </strong> username may be taken or some fields are empty.
+            <strong>Registration failed! </strong> username may be taken.
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                 <span aria-hidden='true'>&times;</span>
             </button>

@@ -1,6 +1,6 @@
 <?php
     require 'includes/func.inc.php';
-    get_header("Login");
+    get_header("Login/Signup");
 ?>
 
 
@@ -31,7 +31,7 @@
                 <h5>Login to start enjoying unlimited fun!</h5>
 
 
-                <form action="">
+                <form action="includes/processes/login.inc.php" method="post">
 
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Username">
@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="input-group pt-3">
-                        <button class="btn login-btn">Login</button>
+                        <button type="submit" name="login" class="btn login-btn">Login</button>
                     </div>
 
 

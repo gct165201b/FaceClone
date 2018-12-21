@@ -1,15 +1,28 @@
 <?php
 
-include '../Classes/User.php';
-include '../Config/Database.php';
-include './operations.inc.php';
+include_once '../Classes/User.php';
+include_once '../Config/Database.php';
+include_once './operations.inc.php';
 // check for submit button
 if(isset($_POST['signup'])) {
 
     // Get all variables
-    $username = isset($_POST['username']) ? $_POST['username'] : null;
-    $location = isset($_POST['location']) ? $_POST['location'] : null;
-    $password = isset($_POST['password']) ? $_POST['password'] : null;
+    $username = isset($_POST['username']) ? $_POST['username'] : '';
+    $location = isset($_POST['location']) ? $_POST['location'] : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+
+    // Check for empty Fields
+
+    if(empty($username) || $username === '') {
+        header("Location: ../../index.php?field=empty");
+        exit();
+    } else if(empty($location) || $location === '') {
+        header("Location: ../../index.php?field=empty");
+        exit();
+    } else if(empty($password) || $password === '') {
+        header("Location: ../../index.php?field=empty");
+        exit();
+    }
 
     // Create a User Object
 
