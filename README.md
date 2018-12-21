@@ -63,3 +63,9 @@ This is a simple application that simulates some features of actual facebook.
 - [x] Create a Function login_status() in func.inc.php.
 - [x] Display an error message to user using login_status() if user is not valid.
 - [ ] Reset the login form.
+
+## Profile
+- [ ] Create a Function to list all the posts by a specific user.
+- [ ] Get data about a profile.
+- [ ] Hide the Status Edit form if user visits the profile of another user
+- [ ] Show all the friends of that person.

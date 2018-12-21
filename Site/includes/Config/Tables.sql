@@ -48,10 +48,31 @@ CREATE TABLE friendship(
 );
 
 
--- 5,13
+-- POST INSERT QUERY5,13
 
 INSERT INTO posts
     SET
         p_date = now(),
         p_author = 5,
         p_content = 'Hello'
+
+
+-- REQUEST SELECT Query
+
+SELECT u_id,username from users JOIN requests ON users.u_id = requests.req_from WHERE req_to = 13
+
+
+-- Get FRIENDS
+select users.u_id    as person,
+       users.username  as person_name,
+       userf.u_id   as friend_id,
+       userf.username as friend_name
+  from users
+  join friendship
+    on users.u_id = friendship.u_id
+    or users.u_id = friendship.f_id
+  join users userf
+    on (userf.u_id = friendship.u_id and
+       userf.u_id <> users.u_id)
+    or (userf.u_id = friendship.f_id and
+       userf.u_id <> users.u_id) where users.u_id = 5

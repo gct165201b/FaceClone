@@ -30,8 +30,8 @@ if(!isset($_SESSION['u_id'])) {
 		<div class="col-lg-3">
 
 			<div class="card p-3">
-				<p class="font-weight-bold">nicholaskajoh</p>
-				<small>I love to code!</small>
+				<p class="font-weight-bold"><?php echo $_SESSION['username']; ?></p>
+				<small><?php if(isset($_SESSION['status'])) {echo $_SESSION['status'];} ?></small>
 			</div>
 
 
@@ -39,14 +39,7 @@ if(!isset($_SESSION['u_id'])) {
 				<p class="font-weight-bold">Friend Requests</p>
 				<small>
 					<ul>
-						<li>
-							<!-- Link to profile of the person. -->
-							<a href="">johndoe</a>
-							<!-- Link to accept the friend request. -->
-							<a href="" class="text-success">[accept]</a>
-							<!-- Link to Reject the request -->
-							<a href="" class="text-danger">[decline]</a>
-						</li>
+                        <?php display_requests($_SESSION['u_id']); ?>
 					</ul>
 				</small>
 			</div>
@@ -83,13 +76,7 @@ if(!isset($_SESSION['u_id'])) {
 				<p class="font-weight-bold">Add Friends</p>
 				<small>
 					<ul>
-						<li>
-							<!-- Link to profile of the person. -->
-							<a href="">Alberte</a>
-							<!-- Link to send friend request. -->
-							<a href="">[add]</a>
-
-						</li>
+						<?php display_users($_SESSION['u_id']); ?>
 					</ul>
 				</small>
 			</div>

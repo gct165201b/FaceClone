@@ -34,5 +34,7 @@ $post_id = null;
 
     }
 
+    $connection = null;
+
     header("Location: ../../home.php");
     exit();

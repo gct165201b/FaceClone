@@ -2,13 +2,7 @@
 	<p class="font-weight-bold">Friend</p>
 	<small>
 		<ul>
-			<li>
-				<!-- Link to profile of the person. -->
-				<a href="">Peterpane</a> 
-				
-				<!-- Link to unfriend a person -->
-				<a href="" class="text-danger">[unfriend]</a>
-			</li>
+			<?php display_friends($_SESSION['u_id']); ?>
 		</ul>
 	</small>
 </div>

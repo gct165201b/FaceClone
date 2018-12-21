@@ -1,6 +1,9 @@
 <?php
 
-
+include_once 'Config/Database.php';
+include_once 'Classes/User.php';
+include_once 'Classes/Post.php';
+include_once 'processes/operations.inc.php';
  // Contains top section of the html document and sets the title.
 function get_header($title) {
 
@@ -91,16 +94,15 @@ function login_status() {
 }
 
 
-function display_posts() {
+function display_posts($default_user_id = 0) {
     // get all posts
-    require('./includes/Config/Database.php');
-    require('./includes/processes/operations.inc.php');
+
 
     $database = new Database();
 
     $connection = $database->connect();
 
-    $post_array = get_all_posts($connection, $_SESSION['u_id']);
+    $post_array = get_all_posts($connection, $_SESSION['u_id'] , $default_user_id);
 
     $connection = null;
 
@@ -129,6 +131,88 @@ function display_posts() {
                     echo "</form>";
                 echo "</div>";
             echo "</div>";
+        }
+    }
+}
+
+
+function display_requests($default_user_id = null) {
+
+
+    $database = new Database();
+
+    $connection = $database->connect();
+
+    $requests_array = get_all_requests($connection, $default_user_id);
+
+    $connection = null;
+
+    if(count($requests_array) === 0) {
+        echo "<h6>No Friend Request!</h6>";
+    } else {
+        foreach ($requests_array as $request) {
+            // code...
+            // <li>
+            //     <!-- Link to profile of the person. -->
+            //     <a href="">johndoe</a>
+            //     <!-- Link to accept the friend request. -->
+            //     <a href="" class="text-success">[accept]</a>
+            //     <!-- Link to Reject the request -->
+            //     <a href="" class="text-danger">[decline]</a>
+            // </li>
+
+            echo "<li>";
+                echo "<a href='./profile.php?user_profile=" . $request->get_user_id() . "'>" . $request->get_username() . "</a>";
+                echo "<a href='./includes/processes/request.inc.php?accept=" . $request->get_user_id() . "' class='text-success'>  [accept]</a>";
+                echo "<a href='./includes/processes/request.inc.php?decline=" . $request->get_user_id() . "' class='text-danger'>  [decline]</a>";
+            echo "</li>";
+        }
+    }
+}
+
+function display_users($uid) {
+
+    $database = new Database();
+
+    $connection = $database->connect();
+
+    $users_array = get_all_users($connection, $uid);
+
+    $connection = null;
+
+    if(count($users_array) === 0) {
+        echo "<h6>No Users!</h6>";
+    } else {
+        foreach ($users_array as $user) {
+
+
+            echo "<li>";
+                echo "<a href='./profile.php?user_profile=" . $user->get_user_id() . "'>" . $user->get_username() . "</a>";
+                echo "<a href='./includes/processes/request.inc.php?addfriend=".$user->get_user_id()."' class='text-success'>  [Add]</a>";
+            echo "</li>";
+        }
+    }
+}
+
+function display_friends($u_id) {
+    $database = new Database();
+
+    $connection = $database->connect();
+
+    $friends_array = get_all_friends($connection, $u_id);
+
+    $connection = null;
+
+    if(count($friends_array) === 0) {
+        echo "<h6>No Friends!</h6>";
+    } else {
+        foreach ($friends_array as $friend) {
+
+
+            echo "<li>";
+                echo "<a href='./profile.php?user_profile=" . $friend->get_user_id() . "'>" . $friend->get_username() . "</a>";
+                echo "<a href='./includes/processes/request.inc.php?unfriend=" . $friend->get_user_id() . "' class='text-danger'>  [unfriend]</a>";
+            echo "</li>";
         }
     }
 }
