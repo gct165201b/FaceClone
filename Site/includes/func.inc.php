@@ -25,7 +25,7 @@ function get_header($title) {
 // Give the user a message that his account is created or not.
 function signup_status() {
 
-    if(isset($_GET['field'])) {
+    if(isset($_GET['signup_field'])) {
         if($_GET['signup_field'] === 'empty') {
             echo "
             <div class='alert alert-warning alert-dismissible fade show' role='alert'>
@@ -57,6 +57,35 @@ function signup_status() {
             </button>
             </div>
                  ";
+        }
+    }
+}
+
+
+function login_status() {
+    if(isset($_GET['login_field'])) {
+        if($_GET['login_field'] === 'empty') {
+            echo "
+            <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+            <strong>Login failed! </strong> Some Fields are Empty!
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+            </button>
+            </div>
+                 ";
+        }
+    } else if(isset($_GET['login'])) {
+        if($_GET['login'] === 'failed') {
+
+            echo "
+            <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+            <strong>Login failed! </strong> username or password is invalid.
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+            </button>
+            </div>
+                 ";
+
         }
     }
 }

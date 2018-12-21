@@ -34,7 +34,7 @@
 
             <!-- Coloumn for Sign in form -->
             <div class="col-lg-6">
-
+                <?php login_status(); ?>
                 <h5>Login to start enjoying unlimited fun!</h5>
 
 
