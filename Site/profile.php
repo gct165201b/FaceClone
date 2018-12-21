@@ -1,4 +1,11 @@
-<?php require 'includes/func.inc.php';
+<?php
+session_start();
+
+if(!isset($_SESSION['u_id'])) {
+    header("Location: ./index.php");
+    exit();
+}
+    require 'includes/func.inc.php';
     get_header("My Profile");
     include_once 'includes/navbar.inc.php';
 ?>

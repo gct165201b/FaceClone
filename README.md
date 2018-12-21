@@ -55,11 +55,11 @@ This is a simple application that simulates some features of actual facebook.
 - [ ] Reset the signup form.
 
 ## Login
-- [ ] Create login.inc.php.
-- [ ] Get values from fiedls.
-- [ ] Create a function for login in operations.inc.php.
-- [ ] Create Session if user is valid.
-- [ ] Redirect the user to home.php.
+- [x] Create login.inc.php.
+- [x] Get values from fiedls.
+- [x] Create a function for login in operations.inc.php.
+- [x] Create Session if user is valid.
+- [x] Redirect the user to home.php.
 - [ ] Create a Function login_status() in func.inc.php.
 - [ ] Display an error message to user using login_status() if user is not valid.
 - [ ] Reset the login form.

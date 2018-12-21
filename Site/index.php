@@ -1,4 +1,11 @@
 <?php
+    session_start();
+
+    if(isset($_SESSION['u_id'])) {
+        header("Location: ./home.php");
+        exit();
+    }
+
     require 'includes/func.inc.php';
     get_header("Login/Signup");
 ?>
@@ -34,11 +41,11 @@
                 <form action="includes/processes/login.inc.php" method="post">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input type="text" name="username" class="form-control" placeholder="Username">
                     </div>
 
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
 
                     <div class="input-group pt-3">

@@ -5,15 +5,22 @@
   <!-- Nav Items will only be displayed if the user is logged in -->
 
 	<ul class="nav justify-content-end">
+        <?php if(isset($_SESSION['u_id'])) { ?>
 		<li class="nav-item">
 			<a class="nav-link active txt-light" href="home.php">Home</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link txt-light" href="profile.php">Profile</a>
 		</li>
-		<li class="nav-item">
-			<a class="nav-link txt-light" href="#">Logout</a>
-		</li>
-		
+
+
+    		<li class="nav-item">
+    			<form action="./includes/processes/logout.inc.php" method="post">
+                    <button type="submit" class="btn btn-outline-warning" name="logout">Logout</button>
+                </form>
+    		</li>
+
+        <?php } ?>
+
 	</ul>
 </nav>

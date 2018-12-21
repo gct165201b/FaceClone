@@ -1,7 +1,7 @@
 <?php
 
 class User {
-    private $u_id;
+    private $user_id;
     private $username;
     private $password;
     private $status;
@@ -10,7 +10,7 @@ class User {
 
 
     public function __construct() {
-        $u_id = null;
+        $user_id = 0;
         $username = null;
         $password = null;
         $status = null;
@@ -22,7 +22,7 @@ class User {
     // setters
 
     public function set_user_id($u_id) {
-        $this->$u_id = $u_id;
+        $this->user_id = $u_id;
     }
 
     public function set_username($username) {
@@ -48,7 +48,7 @@ class User {
     // Getters
 
     public function get_user_id() {
-        return $this->u_id;
+        return $this->user_id;
     }
 
     public function get_username() {

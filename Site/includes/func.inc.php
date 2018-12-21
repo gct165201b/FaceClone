@@ -26,7 +26,7 @@ function get_header($title) {
 function signup_status() {
 
     if(isset($_GET['field'])) {
-        if($_GET['field'] === 'empty') {
+        if($_GET['signup_field'] === 'empty') {
             echo "
             <div class='alert alert-warning alert-dismissible fade show' role='alert'>
             <strong>Registration failed! </strong> Some Fields are Empty!

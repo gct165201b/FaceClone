@@ -14,13 +14,13 @@ if(isset($_POST['signup'])) {
     // Check for empty Fields
 
     if(empty($username) || $username === '') {
-        header("Location: ../../index.php?field=empty");
+        header("Location: ../../index.php?signup_field=empty");
         exit();
     } else if(empty($location) || $location === '') {
-        header("Location: ../../index.php?field=empty");
+        header("Location: ../../index.php?signup_field=empty");
         exit();
     } else if(empty($password) || $password === '') {
-        header("Location: ../../index.php?field=empty");
+        header("Location: ../../index.php?signup_field=empty");
         exit();
     }
 
@@ -41,9 +41,13 @@ if(isset($_POST['signup'])) {
     // store user in database.
 
     if(!store_user($connection, $user)) {
+        $connection = null; // close connection.
+        $user = null;
         header("Location: ../../index.php?signup=faild");
         exit();
     } else {
+        $connection == null; // close connection.
+        $user = null;
         header("Location: ../../index.php?signup=success");
         exit();
     }
