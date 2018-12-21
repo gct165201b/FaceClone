@@ -11,10 +11,10 @@ class Database {
 
     public function __construct() {
         $this->connection = null;
-        $this->host = '(your host name)';
-        $this->username = 'your user name';
-        $this->password = 'your password';
-        $this->database_name = 'your database name';
+        $this->host = 'localhost';
+        $this->username = 'root';
+        $this->password = 'gct165201b';
+        $this->database_name = 'face_clone';
     }
 
     public function connect() {
