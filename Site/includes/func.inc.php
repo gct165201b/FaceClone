@@ -216,3 +216,26 @@ function display_friends($u_id) {
         }
     }
 }
+
+
+function show_profile($user_id) {
+    $database = new Database();
+
+    $connection = $database->connect();
+
+    $user = null;
+
+    $user = get_profile($connection, $user_id);
+
+    $connection = null;
+
+    echo "<h4 class='mt-4'>" . $user->get_username() . "</h4>";
+    if(empty($user->get_status())) {
+        $status = "<small class='text-muted'>Not Set!</small>";
+    } else {
+        $status = $user->get_status();
+    }
+    echo "<small>Status: " . $status . "</small>";
+    echo "<small> Location: " . $user->get_location() . "</small>";
+
+}

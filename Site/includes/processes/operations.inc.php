@@ -342,3 +342,53 @@ function unfriend($connection, $friend, $u_id) {
         return false;
     }
 }
+
+
+function get_profile($connection, $u_id) {
+    $query = "SELECT * FROM users WHERE u_id = $u_id";
+
+    $stmt = $connection->prepare($query);
+
+    $stmt->execute();
+
+    $total_records = $stmt->rowCount();
+
+    $user = new User();
+
+    if($total_records === 0) {
+        return $user;
+    } else {
+        if($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $user->set_user_id($row['u_id']);
+            $user->set_username($row['username']);
+            $user->set_location($row['location']);
+            $user->set_status($row['status']);
+            $user->set_profile_image($row['profile_image']);
+        }
+
+        return $user;
+    }
+}
+
+function update_profile($connection, $user) {
+    $status = $user->get_status();
+    $location = $user->get_location();
+    $id = $user->get_user_id();
+
+    $query = "UPDATE users
+        SET
+            status = " . $connection->quote($status);
+    if(empty($location) || $location === '') {
+        $query .= " WHERE u_id = $id";
+    } else if(!empty($location) && $location !== '') {
+        $query .= ",location=" . $connection->quote($location) . " WHERE u_id = $id";
+    }
+
+    $stmt = $connection->prepare($query);
+
+    if($stmt->execute()) {
+        return true;
+    } else {
+        return false;
+    }
+}

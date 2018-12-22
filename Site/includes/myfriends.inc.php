@@ -2,7 +2,14 @@
 	<p class="font-weight-bold">Friend</p>
 	<small>
 		<ul>
-			<?php display_friends($_SESSION['u_id']); ?>
+			<?php
+				$profil_id = null;
+				if(isset($_GET['user_profile'])) {
+					$profil_id = $_GET['user_profile'];
+				} else {
+					$profil_id = $_SESSION['u_id'];
+				}
+			 display_friends($profil_id); ?>
 		</ul>
 	</small>
 </div>
