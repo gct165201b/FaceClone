@@ -31,6 +31,9 @@ This is a simple application that simulates some features of actual facebook.
 - [x] Fields to Edit Profile.
 
 
+## Responsive Design.
+- [ ] Add Responsiveness in all pages.
+
 # Steps by Step Guide for Back-End:
 
 ## Create Database
@@ -65,10 +68,12 @@ This is a simple application that simulates some features of actual facebook.
 - [ ] Reset the login form.
 
 ## Profile
-- [ ] Create a Function to list all the posts by a specific user.
-- [ ] Get data about a profile.
-- [ ] Hide the Status Edit form if user visits the profile of another user
-- [ ] Show all the friends of that person.
+- [x] Create a Function to list all the posts by a specific user.
+- [x] Get data about a profile.
+- [x] Hide the Status Edit form if user visits the profile of another user
+- [x] Show all the friends of that person.
+- [ ] Hide the Edit form other users.
 
 ## Home Page
 - [x] Created the Friend System.
+- [ ] Fix the unfriend bug.
