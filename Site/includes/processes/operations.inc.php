@@ -332,7 +332,7 @@ function send_request($connection, $req_from, $req_to) {
 
 function unfriend($connection, $friend, $u_id) {
     // DELETE FROM friendship WHERE u_id = 7 AND f_id = 13
-    $query = "DELETE FROM friendship WHERE u_id = $u_id AND f_id = $friend";
+    $query = "DELETE FROM friendship WHERE u_id = $u_id AND f_id = $friend OR u_id = $friend AND f_id = $u_id";
 
     $stmt = $connection->prepare($query);
 

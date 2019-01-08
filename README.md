@@ -76,4 +76,4 @@ This is a simple application that simulates some features of actual facebook.
 
 ## Home Page
 - [x] Created the Friend System.
-- [ ] Fix the unfriend bug.
+- [x] Fix the unfriend bug.
