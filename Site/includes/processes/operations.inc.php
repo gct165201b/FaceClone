@@ -392,3 +392,20 @@ function update_profile($connection, $user) {
         return false;
     }
 }
+
+
+function store_post($connection, $post, $post_author_id) {
+    $post_content = $post->get_post_content();
+
+    $query = "INSERT INTO posts(p_date,p_content,p_author) VALUES ";
+    $query .= "(now(), " . $connection->quote($post_content) . " , $post_author_id)";
+
+
+    $stmt = $connection->prepare($query);
+
+    if($stmt->execute()) {
+        return true;
+    } else {
+        return false;
+    }
+}

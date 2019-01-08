@@ -187,7 +187,7 @@ function display_users($uid) {
 
 
             echo "<li>";
-                echo "<a href='./profile.php?user_profile=" . $user->get_user_id() . "'>" . $user->get_username() . "</a>";
+                echo "<a href='./profile.php?profile=" . $user->get_user_id() . "'>" . $user->get_username() . "</a>";
                 echo "<a href='./includes/processes/request.inc.php?addfriend=".$user->get_user_id()."' class='text-success'>  [Add]</a>";
             echo "</li>";
         }

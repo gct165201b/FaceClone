@@ -51,12 +51,12 @@ if(!isset($_SESSION['u_id'])) {
 		<div class="col-lg-6">
 
 
-			<form action="">
+			<form action="./includes/processes/add_post.inc.php" method="post">
 
 				<div class="input-group">
-				  <input type="text" class="form-control" placeholder="Make a post">
+				  <input type="text" class="form-control" name="post_content" placeholder="Make a post">
 				  <div class="input-group-append">
-				    <button class="btn btn-success" type="button">Post</button>
+				    <button class="btn btn-success" type="submit" name="add_post">Post</button>
 				  </div>
 				</div>
 
