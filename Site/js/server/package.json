@@ -1,0 +1,14 @@
+{
+  "name": "faceclone",
+  "version": "1.0.0",
+  "description": "A JS Server for my face clone app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "M.Umar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
