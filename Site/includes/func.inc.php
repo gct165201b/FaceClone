@@ -18,6 +18,8 @@ function get_header($title) {
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
+        <script src="./js/jquery-3.3.1.min.js" charset="utf-8"></script>
+        <script src="./js/script.js" charset="utf-8"></script>
     </head>
 
     <body>
