@@ -84,4 +84,6 @@ This is a simple application that simulates some features of actual facebook.
 
 ## Bring Older Posts When a User Scrolls to the end of the Page.
 - [ ] Install JQuery.min.js
-- [ ] Use Jquery to Load Data from Server.
+- [ ] Create a load-post.php.
+- [ ] Use Jquery to Load load-post.php from Server.
+- [ ] When user scrolls down, bring new data from Server
