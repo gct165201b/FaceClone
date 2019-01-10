@@ -83,13 +83,5 @@ This is a simple application that simulates some features of actual facebook.
 - [ ] Provide the documentation for each step in FRONT & BACK END.
 
 ## Bring Older Posts When a User Scrolls to the end of the Page.
-- [ ] Setup Node Project.
-- [ ] Install MySQL Package
-- [ ] Install nodemone as dev dependency
-- [ ] Install axios To make get Request to the node server
-- [ ] Handle Routes for these requests in the node server.
-- [ ] Parse the Request.
-- [ ] Get Posts from database.
-- [ ] Create Components using JS
-- [ ] Render all the data on Front-End.
-- [ ] No Page Reload.
+- [ ] Install JQuery.min.js
+- [ ] Use Jquery to Load Data from Server.
