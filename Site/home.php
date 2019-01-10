@@ -48,7 +48,7 @@ if(!isset($_SESSION['u_id'])) {
 
 
 
-		<div class="col-lg-6">
+		<div class="col-lg-6 posts">
 
 
 			<form action="./includes/processes/add_post.inc.php" method="post">

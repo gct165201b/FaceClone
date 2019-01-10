@@ -98,7 +98,7 @@ function create_user_session($user) {
 }
 
 
-function get_all_posts($connection, $user_id , $default_user_id = 0) {
+function get_all_posts($connection, $user_id , $default_user_id = 0, $limit = 0) {
 
 
     $all_posts = array();
@@ -108,6 +108,12 @@ function get_all_posts($connection, $user_id , $default_user_id = 0) {
         $query .= "(SELECT p_id FROM post_user WHERE u_id=$user_id)";
     } else {
         $query = "SELECT * FROM posts JOIN users ON posts.p_author = users.u_id WHERE p_author = $default_user_id";
+    }
+
+    if($limit === 0) {
+        $query .= " LIMIT 2";
+    } else if($limit !== 0) {
+        $query .= " LIMIT $limit";
     }
 
     $stmt = $connection->prepare($query);
