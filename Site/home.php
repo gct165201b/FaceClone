@@ -94,6 +94,10 @@ if(!isset($_SESSION['u_id'])) {
 
 </div>
 
+<div id="posts">
+
+</div>
+
 
 
 <?php

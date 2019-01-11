@@ -18,23 +18,6 @@ function get_header($title) {
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
-        <script src="./js/jquery.min.js" charset="utf-8"></script>
-        <script type="text/javascript">
-
-            $(document).ready(function() {
-                var postCount = 2;
-                $(window).scroll(function(e) {
-                    e.preventDefault();
-                   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-                       postCount += 2;
-                       $('.posts').load('load-post-ajax.php', {
-                           newPostCount: postCount
-                       });
-                   }
-                });
-            });
-
-        </script>
     </head>
 
     <body>

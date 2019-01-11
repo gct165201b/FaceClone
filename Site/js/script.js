@@ -1,4 +1,8 @@
 
 $(document).ready(function() {
-    console.log('Hello WOrld');
+    $('#posts').load('loadpost.php', {
+        newPostCount: 2
+    },function() {
+        console.log('Data Loaded!');
+    });
 });
