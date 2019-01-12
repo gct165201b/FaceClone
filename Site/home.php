@@ -48,7 +48,7 @@ if(!isset($_SESSION['u_id'])) {
 
 
 
-		<div class="col-lg-6 posts">
+		<div class="col-lg-6">
 
 
 			<form action="./includes/processes/add_post.inc.php" method="post">
@@ -63,9 +63,14 @@ if(!isset($_SESSION['u_id'])) {
 			</form>
 
 			<!-- Post Section -->
+            <div class="posts">
+                <?php display_posts(); ?>
+            </div>
 
-            <?php display_posts(); ?>
 
+            <!-- Load Older Posts By Pressing the button -->
+
+            <button type="button" id="load-posts" class="btn btn-outline-primary" name="button">Load Older Posts</button>
 
 		</div>
 
@@ -91,10 +96,6 @@ if(!isset($_SESSION['u_id'])) {
 	<small class="float-right pr-4">FaceClone - Made by M.Umar</small>
 
 
-
-</div>
-
-<div id="posts">
 
 </div>
 

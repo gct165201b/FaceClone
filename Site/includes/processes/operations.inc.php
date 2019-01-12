@@ -105,9 +105,9 @@ function get_all_posts($connection, $user_id , $default_user_id = 0, $limit = 0)
 
     if($default_user_id === 0) {
         $query = "SELECT * FROM posts JOIN users ON posts.p_author = users.u_id WHERE p_id NOT IN";
-        $query .= "(SELECT p_id FROM post_user WHERE u_id=$user_id)";
+        $query .= "(SELECT p_id FROM post_user WHERE u_id=$user_id) ORDER BY p_id DESC";
     } else {
-        $query = "SELECT * FROM posts JOIN users ON posts.p_author = users.u_id WHERE p_author = $default_user_id";
+        $query = "SELECT * FROM posts JOIN users ON posts.p_author = users.u_id WHERE p_author = $default_user_id ORDER BY p_id DESC";
     }
 
     if($limit === 0) {

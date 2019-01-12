@@ -210,7 +210,7 @@ function display_friends($u_id) {
 
 
             echo "<li>";
-                echo "<a href='./profile.php?user_profile=" . $friend->get_user_id() . "'>" . $friend->get_username() . "</a>";
+                echo "<a href='./profile.php?profile=" . $friend->get_user_id() . "'>" . $friend->get_username() . "</a>";
                 echo "<a href='./includes/processes/request.inc.php?unfriend=" . $friend->get_user_id() . "' class='text-danger'>  [unfriend]</a>";
             echo "</li>";
         }

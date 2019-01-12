@@ -1,8 +1,13 @@
 
 $(document).ready(function() {
-    $('#posts').load('loadpost.php', {
-        newPostCount: 2
-    },function() {
-        console.log('Data Loaded!');
+    var postCount = 2;
+    $('#load-posts').click(function() {
+        console.log(this);
+        postCount += 2;
+        $('.posts').load('./includes/loadpost.php', {
+            newPostCount: postCount
+        },function() {
+            console.log('Data Loaded!');
+        });
     });
 });

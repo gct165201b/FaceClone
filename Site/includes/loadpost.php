@@ -1,14 +1,14 @@
 <?php
 session_start();
-include_once './includes/Config/Database.php';
-include_once './includes/Classes/Post.php';
-include_once './includes/processes/operations.inc.php';
+include_once './Config/Database.php';
+include_once './Classes/Post.php';
+include_once './processes/operations.inc.php';
 
 
 function display_posts($default_user_id = 0) {
 
     $postCount = $_POST['newPostCount'];
-    echo "<h1>$postCount</h1>";
+
     // get all posts
 
 
